@@ -17,7 +17,9 @@ a.button {
 }
 
 .logo__cursor {
-    background: #666;
+    background-image: url("https://tirelli.micro.blog/uploads/2020/65cd33c96b.jpg");
+    background-size: cover;
+    /* background: #666; */
     animation: cursor 10s infinite;
     width: 1rem;
 }
@@ -40,6 +42,15 @@ html {
 body {
     font-family: 'IBM Plex Serif', serif;
     font-weight: 500;
+    border: solid black .5rem;
+    background-color: white;
+    color: black;
+}
+
+body.dark-theme {
+    border: solid white .5rem;
+    background-color: black;
+    color: white;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -48,6 +59,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* post */
+.post img {
+    border: solid black .5rem;
+}
+
+body.dark-theme .post img {
+    border: solid white .5rem;
+}
+
+
 .post-meta {
     font-family: 'IBM Plex Sans Condensed', sans-serif;
     font-size: .782rem;

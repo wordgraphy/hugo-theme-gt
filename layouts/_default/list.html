@@ -48,9 +48,12 @@
         {{ with .Description }}
           {{ . | markdownify }}
         {{ else }}
+          <!--
           {{ if .Truncated }}
             {{ .Summary | markdownify }}
           {{ end }}
+          -->
+          {{ .Content }}
         {{ end }}
       </div>
       {{ if not .Params.hideReadMore }}

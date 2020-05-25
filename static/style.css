@@ -1,0 +1,61 @@
+/* OVERWRITING */
+
+/* buttons */
+
+button,
+.button,
+a.button {
+    font-family: 'IBM Plex Sans Condensed', sans-serif;
+}
+
+/* logo */
+
+.logo__text {
+    font-size: 1rem;
+    font-family: 'IBM Plex Sans Condensed', sans-serif;
+}
+
+.logo__cursor {
+    background: #666;
+    animation: cursor 10s infinite;
+}
+
+
+/* menu */
+
+.menu{
+    font-family: 'IBM Plex Sans Condensed', sans-serif;
+}
+
+
+/* main */
+
+html {
+    font-size: 20px;
+}
+
+body {
+    font-family: 'IBM Plex Serif', serif;
+    font-weight: 500;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+    letter-spacing: -1px;
+}
+
+/* post */
+.post-meta {
+    font-family: 'IBM Plex Sans Condensed', sans-serif;
+}
+
+/* pagination */
+.pagination__title-h {
+    font-family: 'IBM Plex Sans Condensed', sans-serif;
+}
+
+/* footer */
+
+.footer {
+    font-family: 'IBM Plex Sans Condensed', sans-serif;
+}

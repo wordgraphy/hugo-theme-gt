@@ -15,8 +15,8 @@ paginate = 5
 
 [languages]
   [languages.en]
-    title = "Hello Friend"
-    subtitle = "A simple theme for Hugo"
+    title = "Guillermo Tirelli"
+    subtitle = "Author"
     keywords = ""
     copyright = ""
     menuMore = "Show more"
@@ -26,16 +26,16 @@ paginate = 5
     newerPosts = "Newer posts"
     olderPosts = "Older posts"
     minuteReadingTime = "min read"
-    dateFormatSingle = "2006-01-02"
-    dateFormatList = "2006-01-02"
+    dateFormatSingle = "02 Jan 2006"
+    dateFormatList = "02 Jan 2006"
 
     [languages.en.params.logo]
-      logoText = "hello friend"
+      logoText = "Guillermo Tirelli"
       logoHomeLink = "/"
     # or
     #
     # path = "/img/your-example-logo.svg"
-    # alt = "Your example logo alt text"
+    # alt = "tirelli"
 
     [languages.en.menu]
       [[languages.en.menu.main]]

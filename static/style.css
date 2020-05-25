@@ -6,6 +6,7 @@ button,
 .button,
 a.button {
     font-family: 'IBM Plex Sans Condensed', sans-serif;
+    font-size: .782rem;
 }
 
 /* logo */
@@ -18,6 +19,7 @@ a.button {
 .logo__cursor {
     background: #666;
     animation: cursor 10s infinite;
+    width: 1rem;
 }
 
 
@@ -25,6 +27,7 @@ a.button {
 
 .menu{
     font-family: 'IBM Plex Sans Condensed', sans-serif;
+    font-size: .782rem;
 }
 
 
@@ -47,15 +50,18 @@ h1, h2, h3, h4, h5, h6 {
 /* post */
 .post-meta {
     font-family: 'IBM Plex Sans Condensed', sans-serif;
+    font-size: .782rem;
 }
 
 /* pagination */
 .pagination__title-h {
     font-family: 'IBM Plex Sans Condensed', sans-serif;
+    font-size: .782rem;
 }
 
 /* footer */
 
-.footer {
+.footer__inner .logo__text, .footer__inner .logo__cursor, .footer, .footer span {
     font-family: 'IBM Plex Sans Condensed', sans-serif;
+    font-size: .782rem;
 }

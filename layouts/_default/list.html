@@ -9,16 +9,16 @@
   {{ $paginator := .Paginate (where $PageContext.RegularPages "Type" $contentTypeName) }}
 
   <div class="posts">
-    <div>
+    <div class="post on-list">
       <div class="intro-text">
         <p>I am Guillermo Tirelli.</p>
-        <p>I write, combining philosophy, design, languages, humanities, and digital technologies.</p>
+        <p>I write — combining philosophy, design, languages, humanities in analog and digital technologies.</p>
         <p><a class="read-more button" href="https://tirelli.micro.blog/about/">Read more →</a></p>
       </div>
-    </div>
-  
-  
 
+    </div>
+    
+    
     {{ range $paginator.Pages }}
     <div class="post on-list">
       <h1 class="post-title"><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h1>

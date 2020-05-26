@@ -65,12 +65,22 @@ h1, h2, h3, h4, h5, h6 {
     background-position: top 1rem;
     padding-left: 20%;
     text-align: left;
-    margin-left: 5%;
-    padding-bottom: 1rem;
+}
+
+body.dark-theme .intro-text {
+    background-image: url("https://tirelli.micro.blog/uploads/2020/37ac82119e.svg");
+    background-repeat: no-repeat;
+    background-size: 12%;
+    background-position: top 1rem;
 }
 
 
 /* post */
+
+.post {
+    padding-bottom: 2rem;
+}
+
 .post img {
     border: solid black .5rem;
 }

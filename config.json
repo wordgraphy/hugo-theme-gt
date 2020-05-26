@@ -1,13 +1,5 @@
 {
     "params": {
         "contentTypeName": "post"
-    },
-
-    "languages": {
-        "en": {
-            "title": "Guillermo Tirelli",
-            "dateFormatSingle": "02 Jan 2006",
-            "dateFormatList": "02 Jan 2006"
-        }
     }
 }

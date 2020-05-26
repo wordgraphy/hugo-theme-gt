@@ -3,6 +3,11 @@
   {{ $contentTypeName := cond $isntDefault (string $.Site.Params.contentTypeName) "posts" }}
 
   <div class="post">
+
+    {{ if (eq .Title "test") }}
+      <h1>THIS IS A PROPER TEST</h1>
+    {{ end }}
+
     <h1 class="post-title"><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h1>
     <div class="post-meta">
       {{ if .Date | default nil }}

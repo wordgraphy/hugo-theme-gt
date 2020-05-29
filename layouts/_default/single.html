@@ -4,9 +4,18 @@
 
   <div class="post">
 
-    {{ if (eq .Title "Test") }}
-      <h1>THIS IS A PROPER TEST</h1>
-    {{ end }}
+    {{ if (eq .Title "About") }}
+    <div class="post on-list">
+      <div class="intro-text">
+        <p>I am Guillermo Tirelli.</p>
+        <p>I write — combining philosophy, design, languages, humanities in analog and digital technologies.</p>        
+        <p>I work in digital project, write, teach, talk, and participate in projects relating human sciences and arts to digital technologies and to the human experience in general.</p>
+        <p>Originally from Argentina, having lived in Paris and Berlin, I live in London.</p>
+        <p>Please reach me at <a class="read-more button" href="mailto:g@tirel.li">g@tirel.li</a></p>
+      </div>
+    </div>
+
+    {{ else }}
 
     <h1 class="post-title"><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h1>
     <div class="post-meta">
@@ -28,6 +37,9 @@
       {{ end }}
     </div>
 
+    {{ end }}
+
+    
     {{ if .Params.tags }}
       <span class="post-tags">
         {{ range .Params.tags }}
@@ -83,5 +95,5 @@
       {{ end }}
     {{ end }}
 
-    </div>
+  </div>
 {{ end }}

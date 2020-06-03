@@ -5,37 +5,84 @@
   <div class="post">
 
     {{ if (eq .Title "About") }}
-    <div class="post on-list">
-      <div class="intro-text">
-        <p>I am Guillermo Tirelli.</p>
-        <p>I write — combining philosophy, design, languages, humanities in analog and digital technologies.</p>        
-        <p>I work in digital project, write, teach, talk, and participate in projects relating human sciences and arts to digital technologies and to the human experience in general.</p>
-        <p>Originally from Argentina, having lived in Paris and Berlin, I live in London.</p>
-        <p>Please reach me at <a href="mailto:g@tirel.li">g@tirel.li</a></p>
+
+      <div class="post on-list">
+        <div class="intro-text">
+          <p>I am Guillermo Tirelli.</p>
+          <p>I write — combining philosophy, design, languages, humanities in analog and digital technologies.</p>        
+          <p>I work in digital project, write, teach, talk, and participate in projects relating human sciences and arts to digital technologies and to the human experience in general.</p>
+          <p>Originally from Argentina, having lived in Paris and Berlin, I live in London.</p>
+          <p>Please reach me at <a href="mailto:g@tirel.li">g@tirel.li</a></p>
+        </div>
       </div>
-    </div>
 
     {{ else }}
 
-    <h1 class="post-title"><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h1>
-    <div class="post-meta">
-      {{ if .Date | default nil }}
-        <span class="post-date">
-          {{ .Date.Format  "2 January 2006" }}
-        </span>
+      {{ if (eq .Title "Archive") }}
 
-        {{ if eq .Type $contentTypeName }}
-          {{ if $.Site.Params.LastModDisplay }}
-            {{ partial "lastmod.html" . }}
+        <div class="archive">
+          <h1>{{ .Title }}</h1>
+          {{ range .Site.RegularPages.GroupByPublishDate "2006" }}
+          {{ if ne .Key "0001" }}
+          <div class="archive__group-year">
+            <h2 class="archive__group-year-header">{{ replace .Key "0001" "" }}</h2>
+            {{ range .Pages.GroupByDate "January" }}
+            <div class="archive__group-month">
+              <h3 class="archive__group-month-header">{{ .Key }}</h3>
+              <div class="archive__group-posts">
+                {{ range where .Pages "Type" $contentTypeName }}
+                {{ if eq .Kind "page" }}
+                <div class="archive__post">
+                  <h3 class="archive__post-title"><a
+                      href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+                  </h3>
+                  <div class="archive__post-meta">
+                    <span class="archive__post-date">
+                      {{ .Date.Format ($.Site.Params.DateFormatList | default "2006-01-02") }}
+                    </span>
+                    {{ with .Params.Author }}
+                    <span class="archive__post-author">—
+                      {{ $.Site.Params.WrittenBy | default "Written by" }}
+                      {{ . }}
+                    </span>
+                    {{ end }}
+                    {{ if $.Site.Params.ShowReadingTime }}
+                    <span class="archive__post-read-time">— {{ .ReadingTime }}
+                      {{ $.Site.Params.MinuteReadingTime | default "min read" }}</span>
+                    {{ end }}
+                  </div>
+                </div>
+                {{ end }}
+                {{ end }}
+              </div>
+            </div>
+            {{ end }}
+          </div>
+          {{ end }}
+          {{ end }}
+        </div>
+          
+      {{ end }}
+
+      <h1 class="post-title"><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h1>
+      <div class="post-meta">
+        {{ if .Date | default nil }}
+          <span class="post-date">
+            {{ .Date.Format  "2 January 2006" }}
+          </span>
+
+          {{ if eq .Type $contentTypeName }}
+            {{ if $.Site.Params.LastModDisplay }}
+              {{ partial "lastmod.html" . }}
+            {{ end }}
           {{ end }}
         {{ end }}
-      {{ end }}
 
-      <!-- {{ with .Params.Author }}<span class="post-author">— {{ $.Site.Params.WrittenBy | default "Written by" }} {{ . }}</span>{{ end }} -->
-      {{ if $.Site.Params.ShowReadingTime }}
-        <span class="post-read-time">— {{ .ReadingTime }} {{ $.Site.Params.MinuteReadingTime | default "min read" }}</span>
-      {{ end }}
-    </div>
+        <!-- {{ with .Params.Author }}<span class="post-author">— {{ $.Site.Params.WrittenBy | default "Written by" }} {{ . }}</span>{{ end }} -->
+        {{ if $.Site.Params.ShowReadingTime }}
+          <span class="post-read-time">— {{ .ReadingTime }} {{ $.Site.Params.MinuteReadingTime | default "min read" }}</span>
+        {{ end }}
+      </div>
 
     {{ end }}
 
@@ -59,6 +106,7 @@
     <div class="post-content">
       {{ .Content }}
     </div>
+
     {{ if eq .Type $.Site.Params.contentTypeName }}
       {{ if or .NextInSection .PrevInSection }}
         <div class="pagination">
@@ -87,7 +135,6 @@
         </div>
       {{ end }}
     {{ end }}
-
 
     {{ if not (eq .Params.Comments "false") }}
       {{ if or (eq .Type $.Site.Params.contentTypeName) (.Params.Comments) }}

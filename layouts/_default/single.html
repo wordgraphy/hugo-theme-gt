@@ -6,15 +6,7 @@
 
     {{ if (eq .Title "About") }}
 
-      <div class="post on-list">
-        <div class="intro-text">
-          <p>I am Guillermo Tirelli.</p>
-          <p>I write — combining philosophy, design, languages, humanities in analog and digital technologies.</p>        
-          <p>I work in digital project, write, teach, talk, and participate in projects relating human sciences and arts to digital technologies and to the human experience in general.</p>
-          <p>Originally from Argentina, having lived in Paris and Berlin, I live in London.</p>
-          <p>Please reach me at <a href="mailto:g@tirel.li">g@tirel.li</a></p>
-        </div>
-      </div>
+      {{ partial "about.html" . }}
 
     {{ else }}
 

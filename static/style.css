@@ -45,6 +45,7 @@ body {
     border: solid black .5rem;
     background-color: white;
     color: black;
+    line-height: 1.601536;
 }
 
 body.dark-theme {
@@ -56,6 +57,39 @@ body.dark-theme {
 h1, h2, h3, h4, h5, h6 {
     font-weight: 500;
     letter-spacing: -1px;
+    margin-top: 2.564576rem;
+    margin-bottom: 1.601536rem;
+}
+
+h1, .post-title {
+    font-size: 2.564576rem;
+}
+
+h2 {
+    font-size: 1.601536rem;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-size: 1.601536rem;
+}
+
+h4 {
+    font-size: 1.39196rem;
+    text-transform: uppercase;
+}
+
+h5 {
+    font-size: 1.39196rem;
+}
+
+h6 {
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+p.small {
+    font-size: 0.782rem;
 }
 
 .intro-text {
@@ -77,15 +111,21 @@ body.dark-theme .intro-text {
 
 /* post */
 
+.post p {
+    margin-bottom: 1.601536rem;
+}
+
 .post {
     padding-bottom: 2rem;
 }
 
-.post img {
+.post img, .post iframe {
     border: solid black .5rem;
 }
 
-body.dark-theme .post img {
+
+
+body.dark-theme .post img, body.dark-theme .post iframe {
     border: solid white .5rem;
 }
 
